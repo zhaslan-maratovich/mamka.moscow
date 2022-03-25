@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="splide.min.css">
+</head>
+<body>
+  <svg width="0" height="0" style="width: 0; height: 0; position: absolute;">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-arrow-link">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="m8.417 8.583 14.739.075.075 14.74-3.2.015-.048-9.32L9.536 24.534l-2.263-2.263L17.72 11.831l-9.32-.048.017-3.2Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-arrow-next">
+      <path d="M28.406 15.898 21.06 20.14v-8.484l7.347 4.242Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4 15.781h20v1H4v-1Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-arrow-scroll">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M16.189 24.857h2.298l-2.705 4.685-2.705-4.685h2.206V4h.906v20.857Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-fb">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.794 8a12.7 12.7 0 0 1 2.052.2v2.515H18.7c-1.147 0-1.494.793-1.494 1.606v1.928h2.545l-.407 2.972h-2.149v7.06a8.315 8.315 0 0 1-2.865 0v-7.06H12v-2.972h2.33v-2.25C14.33 9.43 15.7 8 17.794 8Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-ig">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="m17.094 10.221-2.675-.001c-.655.003-.91.012-1.38.04a3.73 3.73 0 0 0-1.261.233 2.223 2.223 0 0 0-1.284 1.284c-.15.404-.23.83-.234 1.26l-.024.575c-.01.329-.015.698-.016 1.445l.002 2.223c.003.549.013.8.038 1.233.005.43.084.857.234 1.26a2.223 2.223 0 0 0 1.284 1.284c.403.15.83.23 1.26.234l.534.023c.339.011.708.016 1.486.017l2.15-.001c.6-.003.854-.013 1.305-.039.43-.004.857-.083 1.26-.234a2.223 2.223 0 0 0 1.285-1.284c.15-.403.229-.83.233-1.26l.023-.534c.011-.34.016-.708.017-1.486v-2.15c-.004-.6-.014-.854-.04-1.306a3.726 3.726 0 0 0-.233-1.26 2.222 2.222 0 0 0-1.285-1.284 3.73 3.73 0 0 0-1.26-.234l-.575-.024c-.225-.007-.47-.011-.844-.014Zm2.161 5.554a3.48 3.48 0 1 0-6.959 0 3.48 3.48 0 0 0 6.96 0Zm.45-4.37a.813.813 0 1 0-.622 1.503.813.813 0 0 0 .622-1.503Z" fill="currentColor"/><path d="M15.776 13.515a2.26 2.26 0 1 0 0 4.52 2.26 2.26 0 0 0 0-4.52Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.358 9h2.748c.705.003.97.012 1.465.04.561.012 1.117.119 1.643.314a3.48 3.48 0 0 1 1.999 1.983c.196.526.302 1.081.315 1.643l.015.528c.007.357.008.742.009 1.571l-.003 2.263c-.004.536-.014.793-.038 1.229a5.04 5.04 0 0 1-.298 1.643 3.48 3.48 0 0 1-2 1.999 5.037 5.037 0 0 1-1.642.315l-.529.015a81.24 81.24 0 0 1-1.57.009l-2.263-.003a21.192 21.192 0 0 1-1.229-.038 5.038 5.038 0 0 1-1.643-.298 3.48 3.48 0 0 1-1.982-1.982 5.039 5.039 0 0 1-.315-1.644l-.019-.38c-.016-.378-.02-.715-.021-1.482v-2.28c.004-.705.013-.97.04-1.465.013-.562.12-1.117.315-1.643a3.48 3.48 0 0 1 1.982-1.983 5.037 5.037 0 0 1 1.643-.315l.493-.023c.244-.01.494-.014.885-.016Zm2.736 1.221-2.675-.001c-.655.003-.91.012-1.38.04a3.73 3.73 0 0 0-1.261.233 2.223 2.223 0 0 0-1.284 1.284c-.15.404-.23.83-.234 1.26l-.024.575c-.01.329-.015.698-.016 1.445l.002 2.223c.003.549.013.8.038 1.233.005.43.084.857.234 1.26a2.223 2.223 0 0 0 1.284 1.284c.403.15.83.23 1.26.234l.534.023c.339.011.708.016 1.486.017l2.15-.001c.6-.003.854-.013 1.305-.039.43-.004.857-.083 1.26-.234a2.223 2.223 0 0 0 1.285-1.284c.15-.403.229-.83.233-1.26l.023-.534c.011-.34.016-.708.017-1.486v-2.15c-.004-.6-.014-.854-.04-1.306a3.726 3.726 0 0 0-.233-1.26 2.222 2.222 0 0 0-1.285-1.284 3.73 3.73 0 0 0-1.26-.234l-.575-.024c-.225-.007-.47-.011-.844-.014Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-ok">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15.981 16.202c2.455 0 4.45-2.064 4.45-4.6C20.43 9.064 18.435 7 15.98 7c-2.453 0-4.449 2.064-4.449 4.602 0 2.536 1.996 4.6 4.45 4.6Zm1.842-4.6c0-1.051-.826-1.905-1.842-1.905-1.015 0-1.842.854-1.842 1.905 0 1.05.827 1.904 1.842 1.904 1.016 0 1.842-.855 1.842-1.904Z" fill="currentColor"/><path d="M17.793 19.957a8.184 8.184 0 0 0 2.583-1.106c.61-.397.793-1.23.409-1.859a1.277 1.277 0 0 0-1.797-.424 5.49 5.49 0 0 1-5.99 0 1.277 1.277 0 0 0-1.797.424c-.384.63-.201 1.462.408 1.859a8.197 8.197 0 0 0 2.583 1.106l-2.487 2.573a1.381 1.381 0 0 0 0 1.906c.255.263.588.395.922.395.333 0 .667-.132.922-.395l2.443-2.528 2.445 2.528a1.272 1.272 0 0 0 1.843 0 1.38 1.38 0 0 0 0-1.906l-2.487-2.573Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-play">
+      <path d="M23.973 16.184 9 7v18.367l14.973-9.183Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-pr">
+      <path d="M16.063 9C13.013 9 10 11.053 10 14.374c0 2.113 1.177 3.313 1.89 3.313.294 0 .464-.828.464-1.062 0-.279-.704-.873-.704-2.034 0-2.413 1.818-4.124 4.172-4.124 2.024 0 3.522 1.162 3.522 3.295 0 1.594-.633 4.583-2.684 4.583-.74 0-1.373-.54-1.373-1.314 0-1.135.784-2.233.784-3.404 0-1.986-2.79-1.626-2.79.775 0 .504.062 1.062.285 1.521-.41 1.783-1.248 4.439-1.248 6.275 0 .567.08 1.126.133 1.693.101.114.05.102.205.045 1.498-2.071 1.445-2.476 2.122-5.186.366.703 1.31 1.08 2.06 1.08 3.156 0 4.574-3.105 4.574-5.905 0-2.98-2.55-4.924-5.35-4.924V9Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-tw">
+      <path d="M22.087 12.738v.488c0 4.996-3.24 10.752-9.16 10.752-1.747.002-3.457-.586-4.927-1.695.26.034.522.051.785.051 1.449.003 2.856-.567 3.997-1.616-1.377-.032-2.586-1.086-3.009-2.625a2.739 2.739 0 0 0 1.455-.064c-1.495-.354-2.574-1.893-2.58-3.684v-.046c.446.287.945.445 1.455.46-1.414-1.108-1.85-3.316-.997-5.042 1.635 2.35 4.04 3.778 6.622 3.932-.336-1.669.328-3.394 1.617-4.203 1.289-.808 2.88-.497 3.875.759a5.955 5.955 0 0 0 2.048-.921c-.244.874-.746 1.616-1.416 2.09a5.643 5.643 0 0 0 1.84-.593 7.229 7.229 0 0 1-1.605 1.957Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-vk">
+      <path d="M23.73 20.272h-1.795c-.677 0-.888-.526-2.103-1.68-1.057-.976-1.538-1.096-1.787-1.096-.366 0-.47.084-.47.577v1.534c0 .413-.138.662-1.283.662-1.892 0-3.994-1.096-5.47-3.12C8.607 14.186 8 11.925 8 11.479c0-.248.088-.478.607-.478h1.796c.45 0 .622.183.8.661.883 2.426 2.36 4.552 2.967 4.552.226 0 .33-.099.33-.643v-2.506c-.069-1.158-.715-1.257-.715-1.67a.405.405 0 0 1 .144-.289.448.448 0 0 1 .318-.105h2.814c.384 0 .518.197.518.628v3.38c0 .364.158.496.277.496.227 0 .42-.132.834-.53a14.356 14.356 0 0 0 2.207-3.481.794.794 0 0 1 .769-.479h1.806c.538 0 .662.267.538.629-.222.99-2.414 3.927-2.394 3.927-.192.296-.262.427 0 .76.192.248.815.76 1.234 1.22.768.825 1.353 1.52 1.51 1.998.158.478-.119.723-.63.723Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-yb">
+      <path d="M23.45 11.04c-.617-.738-1.758-1.04-3.937-1.04h-7.909c-2.228 0-3.388.321-4.004 1.108-.6.768-.6 1.898-.6 3.463v2.983c0 3.032.712 4.571 4.604 4.571h7.91c1.889 0 2.936-.266 3.613-.918.694-.67.99-1.762.99-3.653v-2.983c0-1.65-.046-2.788-.666-3.53Zm-5.46 5.434-3.592 1.89a.549.549 0 0 1-.541-.018.557.557 0 0 1-.267-.475v-3.766c0-.194.101-.374.266-.475a.55.55 0 0 1 .541-.018l3.591 1.877a.556.556 0 0 1 .002.985Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-gamburger">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M28 11H4V9h24v2ZM28 17H4v-2h24v2ZM28 23H4v-2h24v2Z" fill="currentColor"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163 35" id="logo">
+      <path d="M85.882 26.638a2.47 2.47 0 0 0 1.02 1.4c.498.33 1.1.47 1.695.395a5.299 5.299 0 0 0 3.372-1.463l-.68-.63c-.234.25-.544.418-.883.48-.42 0-.635-.3-.635-.908v-7.64a3.184 3.184 0 0 0-.421-1.593 3.217 3.217 0 0 0-1.163-1.175 6.505 6.505 0 0 0-3.566-.897 11.944 11.944 0 0 0-3.425.48 5.722 5.722 0 0 0-2.866 1.603 1.82 1.82 0 0 0-.528 1.176 1.062 1.062 0 0 0 .636 1.004c.395.228.846.343 1.303.331a2.6 2.6 0 0 0 1.54-.47 1.435 1.435 0 0 0 .647-1.197 1.625 1.625 0 0 0-.204-.694c-.14-.289-.216-.438-.216-.46 0-.32.259-.555.787-.726a3.6 3.6 0 0 1 1.238-.235c1.466 0 2.155.684 2.155 2.073v2.254c-1.73.763-3.458 1.532-5.182 2.308-2.154 1.133-3.232 2.351-3.232 3.676a2.21 2.21 0 0 0 1.078 1.966c.78.485 1.687.73 2.607.705a8.175 8.175 0 0 0 4.923-1.763Zm-2.92-4.274a14.573 14.573 0 0 1 2.78-1.592v4.83a3.797 3.797 0 0 1-2.316.962 1.692 1.692 0 0 1-1.275-.464 1.667 1.667 0 0 1-.514-1.246 3.213 3.213 0 0 1 1.325-2.447v-.043ZM53.241 27.177a3.625 3.625 0 0 1-1.758-.316 3.592 3.592 0 0 1-1.387-1.116 5.13 5.13 0 0 1-.852-3.098V10.08l8.619 17.908h1.077l8.812-18.443v15.088c0 1.699-1.163 2.543-3.49 2.543v.844h11.376v-.844a6.34 6.34 0 0 1-2.446-.352 1.9 1.9 0 0 1-.83-.764 1.878 1.878 0 0 1-.247-1.096V9.931a1.878 1.878 0 0 1 .247-1.096 1.9 1.9 0 0 1 .83-.763 5.827 5.827 0 0 1 2.446-.396v-.801H68.01l-7.746 16.028-7.864-16.028h-8.069v.833a5.308 5.308 0 0 1 3.857 1.304v13.699c0 2.977-1.286 4.466-3.857 4.466v.844h8.91v-.844ZM121.346 25.733v-6.828c0-2.85-1.627-4.274-4.88-4.274-2.251.06-4.421.844-6.184 2.233a3.792 3.792 0 0 0-1.864-1.656 6.43 6.43 0 0 0-2.736-.599 9.743 9.743 0 0 0-5.785 2.138v-2.138h-.57l-5.71 1.56v.513a3.757 3.757 0 0 1 1.723.962 2.55 2.55 0 0 1 .463 1.688v6.134c0 .726-.161 1.186-.495 1.4a3.775 3.775 0 0 1-1.831.31v.844h8.682v-.845a3.934 3.934 0 0 1-1.615-.235 1.234 1.234 0 0 1-.636-1.207v-8.057a6.662 6.662 0 0 1 4.255-1.838c1.605 0 2.413.994 2.413 2.982v6.635c.05.485-.08.972-.366 1.368a2.048 2.048 0 0 1-1.497.352h-.356v.845h8.478v-.845a3.256 3.256 0 0 1-1.702-.299 1.636 1.636 0 0 1-.528-1.442v-7.758a7.151 7.151 0 0 1 4.309-1.838c1.606 0 2.414 1.069 2.414 3.291v6.476c0 .673-.173 1.068-.507 1.293a4.026 4.026 0 0 1-1.756.277v.845h8.522v-.845a4.593 4.593 0 0 1-1.595-.235 1.24 1.24 0 0 1-.646-1.207ZM158.687 26.97l-.668-.63a1.64 1.64 0 0 1-.883.48c-.42 0-.636-.3-.636-.908v-7.64a3.108 3.108 0 0 0-.417-1.6 3.147 3.147 0 0 0-1.177-1.168 6.506 6.506 0 0 0-3.566-.897 12.068 12.068 0 0 0-3.426.48 5.779 5.779 0 0 0-2.865 1.603c-.31.318-.497.735-.528 1.176a1.12 1.12 0 0 0 .636 1.004c.398.23.853.344 1.314.331a2.567 2.567 0 0 0 1.519-.47 1.404 1.404 0 0 0 .657-1.197 1.672 1.672 0 0 0-.215-.694 3.385 3.385 0 0 1-.205-.46c0-.32.258-.555.776-.726.401-.14.824-.209 1.249-.203 1.476 0 2.155.684 2.155 2.073v2.254l-5.182 2.308c-2.155 1.133-3.232 2.351-3.232 3.676-.012.393.082.782.271 1.128.189.345.468.634.806.838.784.485 1.695.73 2.618.705a8.16 8.16 0 0 0 4.837-1.795 2.48 2.48 0 0 0 1.026 1.402c.5.33 1.104.47 1.7.393a5.299 5.299 0 0 0 3.436-1.463Zm-6.216-1.325a3.774 3.774 0 0 1-2.316.961 1.736 1.736 0 0 1-1.303-.502 1.674 1.674 0 0 1-.474-1.218 3.18 3.18 0 0 1 .367-1.395 3.22 3.22 0 0 1 .947-1.095 15.33 15.33 0 0 1 2.779-1.592v4.84ZM139.112 23.968l-2.973-4.808a20.666 20.666 0 0 1 2.154-2.212 4.743 4.743 0 0 1 3.038-1.144v-.897h-7.81v.897c1.314.129 1.982.556 1.982 1.315 0 .758-1.379 2.5-4.137 4.744V6.391h-.614l-5.623 1.549v.598a2.774 2.774 0 0 1 1.745.962c.349.544.515 1.184.474 1.827v13.806c0 .865-.108 1.4-.345 1.624a2.763 2.763 0 0 1-1.874.417v.844h8.198v-.844c-1.25 0-1.874-.417-1.874-1.261v-2.907l1.691-1.378c1.997 3.099 2.995 4.72 2.995 4.862 0 .395-.399.63-1.207.684v.844h7.541v-.844c-1.099-.32-2.197-1.4-3.361-3.206ZM19.933 27.362a.579.579 0 0 1 .688.133l1.908 1.258 1.086-.61-1.923-1.329c-.187-.203-.078-.281 0-.328a36.53 36.53 0 0 1 4.175-1.564l2.494 1.564 1.243-.54-2.26-1.493a49.256 49.256 0 0 1 4.566-1.016l-.782-1.016c-1.48.292-2.921.636-4.323 1.032l.29-2.127-1.205.344-.281 2.127a40.946 40.946 0 0 0-4.519 1.673c-.07 0-.227 0-.172-.227l.258-1.915-1.211.453-.266 1.822a.916.916 0 0 1-.29.664 27.651 27.651 0 0 0-3.838 2.29l1.235.783c.996-.73 2.041-1.39 3.127-1.978Z" fill="currentColor"/><path d="M19.824 34.226A16.723 16.723 0 1 0 19.839.78a16.723 16.723 0 0 0-.015 33.446Zm0-32.397a15.636 15.636 0 0 1 15.635 15.674c0 .407 0 .782-.039 1.212-11.406-3.612-18.848-.649-23.805 6.731v-10.32l8.029-8.599 7.998 8.6v1.376l1.25.055V14.79l-3.26-3.51V8.09h-1.149v1.9l-4.808-5.16-9.264 9.85v12.806h1.165c5.84-8.858 13.697-11.344 23.72-7.466A15.635 15.635 0 1 1 19.823 1.829Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <header class="header bg-darkBg fixed left-0 top-0 w-full h-15 z-50 xl:h-20">
+    <div class="container h-full">
+      <div class="h-full border-b border-white border-opacity-20 flex items-center justify-between text-white">
+
+        <div class="flex justify-between items-center w-full after:w-9 lg:w-auto">
+          <button class="js-header-burger flex items-center justify-center w-11 h-11 -ml-2">
+            <div class="w-5 relative">
+              <span class="icon-burger__1"></span>
+              <span class="icon-burger__2"></span>
+              <span class="icon-burger__3"></span>
+            </div>
+          </button>
+
+          <svg class="w-[140px] h-8 lg:ml-5" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#logo"></use>
+          </svg>
+        </div>
+
+        <nav class="header__nav overflow-hidden">
+          <ul class="header__nav-list text-white hidden lg:flex">
+            <li><a href="#" class="text-label p-2.5 hover-underline"><span>Дизайн детской</span></a></li>
+            <li><a href="#" class="text-label p-2.5 hover-underline"><span>Мебель на заказ</span></a></li>
+            <li><a href="#" class="text-label p-2.5 hover-underline"><span>Проекты</span></a></li>
+            <li><a href="#" class="text-label p-2.5 hover-underline"><span>Каталог</span></a></li>
+            <li><a href="#" class="text-label p-2.5 hover-underline"><span>Дизайнерам</span></a></li>
+          </ul>
+        </nav>
+
+        <a href="#" class="btn-light hidden lg:inline-flex">Рассчитать стоимость детской</a>
+
+      </div>
+    </div>
+  </header>
+  <div class="header-menu fixed top-0 right-0 bottom-0 left-0 z-10">
+    <div class="header-menu__scroll overflow-y-auto text-white absolute left-0 right-0 bottom-0 top-0">
+      <div class="header-menu__content pt-15 xl:pt-20">
+        <div class="container pt-14 pb-11 lg:pt-24 lg:pb-24">
+          <div class="lg:grid lg:grid-cols-12">
+            <ul class="text-center md:text-left lg:col-span-4 lg:col-start-2">
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Дизайн детской</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Мебель на заказ</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Проекты</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Каталог</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Дизайнерам</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Журнал</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">О компании</span>
+                </span>
+              </a></li>
+              <li><a href="#" class="text-h4 block p-2.5 xl:py-3 2xl:py-5 text-white hover:text-opacity-50 transition-colors duration-500">
+                <span class="block overflow-hidden">
+                  <span class="line">Контакты</span>
+                </span>
+              </a></li>
+            </ul>
+
+
+            <div class="lg:col-span-4 lg:col-start-9">
+              <div class="overflow-hidden mt-20 mb-14 lg:hidden">
+                <span class="line line--header-1">
+                  <a href="#" class="btn-light w-full md:w-auto">Рассчитать стоимость детской</a>
+                </span>
+              </div>
+              <div class="text-label">
+                <div class="overflow-hidden">
+                  <div class="line line--header-2">
+                    <p>Фирменный магазин Mamka</p>
+                  </div>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="line line--header-3">
+                    <p class="mt-4 w-3/4 md:w-1/2 lg:w-3/4">Москва, пр-т&nbsp;Мира&nbsp;102 стр.&nbsp;38 м.&nbsp;Алексеевская, ЖК «Парк Мира» C&nbsp;11:00&nbsp;до&nbsp;20:00, без&nbsp;выходных</p>
+                  </div>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="line line--header-4">
+                    <p class="mt-8" >
+                      <a href="https://yandex.ru/maps/org/mamka_fabrika_detskoy_mebeli/163023551808/?ll=37.639306%2C55.800268&z=16" target="_blank" rel="noopener noreferrer" class="text-label  hover-underline">
+                        <span class="inline-flex items-center">
+                        Смотреть на карте
+                          <svg class="w-4 h-4 ml-2.5" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="#icon-arrow-link"></use>
+                          </svg>
+                        </span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="overflow-hidden mt-14 -mx-2">
+                <div class="line line--header-5">
+                  <div class="flex flex-wrap">
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-vk"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-fb"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-ok"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-tw"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-yb"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-ig"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full m-1 border border-white border-opacity-10" target="_blank" rel="noopener noreferrer">
+                      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-pr"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="bg-darkBg text-white relative pt-32 pb-12 md:pt-40 lg:pt-32 xl:pt-40 xl:pb-10">
+      <img src="images/land-1/landing-ellipse-1-xs.svg" alt="" class="w-[350px] absolute top-[118px] left-1/2 -translate-x-1/2 md:hidden">
+      <img src="images/land-1/landing-ellipse-1-md-2xl.svg" alt="" class="hidden absolute left-1/2 -translate-x-1/2 md:block md:w-[734px] lg:w-[880px] lg:top-[96px] xl:w-[1130px] xl:top-[156px]">
+      <div class="container relative">
+        <div class="2xl:grid 2xl:grid-cols-12">
+          <h1 class="text-h1 text-center 2xl:col-span-10 2xl:col-start-2">Дизайн-проект <br><span class="text-orange-500">детской комнаты</span></h1>
+          <p class="text text-center mt-4 lg:mt-5 2xl:mt-8 2xl:col-span-full"><span class="inline-block lg:translate-x-1/2">по фиксированной стоимости за 14 дней</span></p>
+          <div class="mt-10 md:flex md:mt-10 lg:mt-8 xl:mt-15 2xl:mt-12 2xl:col-span-10 2xl:col-start-2">
+            <p class="text text-center md:text-left md:w-[320px] lg:w-[460px]">Рассчитайте стоимость интерьера вашей детской комнаты и получите скидку на детскую мебель фабрики МАМКА™ и альбом наших лучших детских интерьеров за 2020 год.</p>
+            <p class="text-center mt-8 md:text-right md:mt-0 md:ml-auto">
+              <a href="#" class="btn">Рассчитать стоимость</a>
+            </p>
+          </div>
+          <div class="mt-11 lg:mt-1.5 2xl:col-span-10 xl:mt-8 2xl:col-start-2">
+            <svg class="w-12 h-12 mx-auto lg:w-16 lg:h-16 animate-bounce" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-arrow-scroll"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-darkBg text-white">
+      <picture class="block fade-up relative">
+        <source media="(min-width: 1440px)" srcset="images/land-2/image-1-2xl_2x.jpg 2x, images/land-2/image-1-2xl.jpg 1x" type="image/jpg">
+
+        <source media="(min-width: 1199px)" srcset="images/land-2/image-1-lg-xl_2x.jpg 2x, images/land-2/image-1-lg-xl.jpg 1x" type="image/jpg">
+
+        <source media="(min-width: 768px)" srcset="images/land-2/image-1-md_2x.jpg 2x, images/land-2/image-1-md.jpg 1x" type="image/jpg">
+
+        <source media="(min-width: 300px)" srcset="images/land-2/image-1-xs_2x.jpg 2x, images/land-2/image-1-xs.jpg 1x" type="image/jpg">
+        <img src="images/land-2/image-1-xs.jpg" alt="" class="block w-full">
+      </picture>
+    </section>
+
+    <section class="bg-darkBg text-white pt-20 md:pt-18 lg:pt-28 xl:pt-36 2xl:pt-24">
+      <div class="container">
+        <div class="md:grid md:grid-cols-6 md:gap-4 lg:grid-cols-12 lg:gap-8">
+          <div class="md:col-span-full lg:col-span-5 xl:pl-16 2xl:col-span-4 2xl:pl-0 2xl:col-start-3">
+            <h2 class="text-h2 text-center lg:text-left lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:mt-10 xl:mt-20">Как мы работаем</h2>
+          </div>
+          <div class="mt-12 md:col-span-4 md:col-start-2 md:mt-14 lg:mt-0 lg:col-span-6 lg:col-start-7 xl:ml-0">
+            <div class="fade-up max-w-[470px] mx-auto flex items-center justify-center bg-white text-dark text-center rounded-full aspect-square lg:ml-auto xl:ml-0 xl:max-w-[570px]">
+              <div class="px-10 xl:px-24">
+                <h3 class="text-h4">Концепция</h3>
+                <p class="text mt-1.5 md:mt-5 xl:mt-6">Вдохновляемся тысячами работ собранных для Вас на наших ресурсах Pinterest и Instagram. Собираем концепцию выделяя все самое интересное.</p>
+              </div>
+            </div>
+
+            <div class="fade-up max-w-[470px] mx-auto -mt-9 relative flex items-center justify-center text-white text-center rounded-full aspect-square md:-mt-12 lg:ml-auto xl:ml-0 xl:-mt-28 xl:max-w-[570px]">
+              <div class="px-10 xl:px-24">
+                <h3 class="text-h4">Спецификации</h3>
+                <p class="text mt-1.5 md:mt-5 xl:mt-6">Подготавливаем рабочие чертежи по проекту — электрика, монтаж, свет. Заполняем спецификацию с указанием всех параметров и материалов будущей комнаты.</p>
+              </div>
+              <svg class="w-full h-full absolute left-0 top-0 text-orange-500" viewBox="0 0 333 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="166.705" cy="165.792" r="164.726" stroke="currentColor" stroke-width="1" stroke-dasharray="10 10"/>
+              </svg>
+            </div>
+
+            <div class="fade-up max-w-[470px] mx-auto -mt-9 flex items-center justify-center bg-orange-500 text-white text-center rounded-full aspect-square md:-mt-12 lg:ml-auto xl:ml-0 xl:-mt-28 xl:max-w-[570px]">
+              <div class="px-10 xl:px-24">
+                <h3 class="text-h4">Результат</h3>
+                <p class="text mt-1.5 md:mt-5 xl:mt-6">Подбираем аксессуары и сопутствующие материалы. Поздравляем — дизайн-проект нашей будущей детской готов.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-darkBg text-white text-center">
+      <div class="container">
+        <div class="relative pt-28 pb-20 md:pb-40 lg:pt-44 xl:pt-48">
+          <div class="flex items-center justify-center">
+            <h2 class="fade-up font-display tracking-tight text-[28px] leading-[110%] uppercase max-w-[300px] md:text-[50px] md:px-0 md:max-w-[574px] lg:col-span-8 lg:col-start-3 xl:text-[90px] xl:col-span-12 xl:col-start-1 xl:max-w-[1064px] 2xl:col-span-8 2xl:col-start-3"><span class="text-orange-500">Разработаем концепцию вашей детской,</span> подберем подходящую мебель, подготовим план и&nbsp;схемы для строителей</h2>
+          </div>
+
+          <picture class="absolute w-[50px] top-[64px] left-0 md:w-[80px] md:top-[154px] lg:top-[218px] xl:w-[120px] xl:top-[274px]">
+            <source srcset="images/land-2/image-2_2x.jpg 2x, images/land-2/image-2.jpg 1x" type="image/jpg">
+            <img src="images/land-2/image-2.jpg" alt="">
+          </picture>
+
+          <picture class="absolute w-[50px] top-[84px] right-0 md:w-[80px] md:top-[54px] lg:top-[120px] xl:w-[120px]  xl:top-[84px] 2xl:top-[130px]">
+            <source srcset="images/land-2/image-3_2x.jpg 2x, images/land-2/image-3.jpg 1x" type="image/jpg">
+            <img src="images/land-2/image-3.jpg" alt="">
+          </picture>
+
+          <picture class="absolute w-[50px] bottom-[30px] right-[44px] md:w-[120px] md:right-[14px] md:bottom-0 lg:w-p[120px] lg:right-[64px] xl:w-[180px] xl:right-[84px] 2xl:right-[120px]">
+            <source srcset="images/land-2/image-4_2x.jpg 2x, images/land-2/image-4.jpg 1x" type="image/jpg">
+            <img src="images/land-2/image-4.jpg" alt="">
+          </picture>
+
+          <picture class="absolute w-[124px] bottom-[0px] left-[14px] md:w-[200px] md:left-0 md:bottom-[54px] lg:left-[200px] xl:w-[272px] xl:left-[44px] xl:bottom-[126px] 2xl:left-[276px]">
+            <img src="images/land-2/image-5.svg" alt="">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-darkBg text-white pt-24 md:pt-40 xl:pt-[274px]">
+      <div class="container fade-up">
+        <h2 class="text-h2 text-center">Ваша детская комната&nbsp;в&nbsp;3D</h2>
+        <div class="-mx-4 mt-8 md:mt-10 lg:mx-0 lg:mt-15">
+          <iframe loading="lazy" class="w-full max-w-full h-[400px] md:h-[600px]" frameborder="0" allowfullscreen="" allow="xr-spatial-tracking; gyroscope; accelerometer" scrolling="no" src="https://kuula.co/share/N45Kr?fs=0&amp;vr=0&amp;zoom=1&amp;sd=1&amp;thumbs=1&amp;inst=0&amp;info=1&amp;logo=1"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="animation-fix-container bg-darkBg pt-72 relative md:pt-[400px] xl:pt-[600px] 2xl:pt-[652px]">
+      <div class="animation-fix-number overflow-hidden absolute left-0 w-full top-28 md:top-[160px] xl:top-[248px] 2xl:top-[288px]">
+        <p class="text text-white text-center">реализованных дизайн-проектов</p>
+        <p class="font-display text-center leading-none text-[190px] -tracking-[.1em] text-orange-500 md:text-[300px] xl:text-[450px]">1049</p>
+      </div>
+      <div class="container relative">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-12 lg:gap-8">
+          <picture class="block col-span-1 lg:col-span-2">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-1-lg-2xl_2x.jpg 2x, images/land-1/image-7-1-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-1-xs-md_2x.jpg 2x, images/land-1/image-7-1-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-1-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="block col-span-1 col-start-2 row-start-2 lg:col-span-2 lg:col-start-5 lg:row-start-1">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-2-lg-2xl_2x.jpg 2x, images/land-1/image-7-2-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-2-xs-md_2x.jpg 2x, images/land-1/image-7-2-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-2-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="block col-span-2 lg:col-span-4 lg:row-span-2 lg:col-start-9 lg:row-start-1">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-3-lg-2xl_2x.jpg 2x, images/land-1/image-7-3-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-3-xs-md_2x.jpg 2x, images/land-1/image-7-3-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-3-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="block col-span-1 lg:col-span-2 lg:col-start-1 lg:row-start-2">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-4-lg-2xl_2x.jpg 2x, images/land-1/image-7-4-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-4-xs-md_2x.jpg 2x, images/land-1/image-7-4-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-4-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="block col-span-1 col-start-2 row-start-5 lg:col-span-2 lg:col-start-3 lg:row-start-2">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-5-lg-2xl_2x.jpg 2x, images/land-1/image-7-5-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-5-xs-md_2x.jpg 2x, images/land-1/image-7-5-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-5-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="block col-span-1 col-start-1 row-start-6 lg:col-span-2 lg:col-start-7 lg:row-start-2">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-6-lg-2xl_2x.jpg 2x, images/land-1/image-7-6-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-6-xs-md_2x.jpg 2x, images/land-1/image-7-6-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-6-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="block col-span-1 col-start-2 row-start-7 lg:col-span-2 lg:col-start-1 lg:row-start-3">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-7-lg-2xl_2x.jpg 2x, images/land-1/image-7-7-lg-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/land-1/image-7-7-xs-md_2x.jpg 2x, images/land-1/image-7-7-xs-md.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-7-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-5 lg:row-start-3">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-8-lg-2xl_2x.jpg 2x, images/land-1/image-7-8-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-8-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-7 lg:row-start-3">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-9-lg-2xl_2x.jpg 2x, images/land-1/image-7-9-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-9-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-9 lg:row-start-3">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-10-lg-2xl_2x.jpg 2x, images/land-1/image-7-10-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-10-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-4 lg:col-start-3 lg:row-span-2 lg:row-start-4">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-11-lg-2xl_2x.jpg 2x, images/land-1/image-7-11-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-11-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-9 lg:row-start-4">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-12-lg-2xl_2x.jpg 2x, images/land-1/image-7-12-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-12-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-11 lg:row-start-4">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-13-lg-2xl_2x.jpg 2x, images/land-1/image-7-13-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-13-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-7 lg:row-start-5">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-14-lg-2xl_2x.jpg 2x, images/land-1/image-7-14-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-14-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+          <picture class="hidden lg:block lg:col-span-2 lg:col-start-9 lg:row-start-5">
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-7-15-lg-2xl_2x.jpg 2x, images/land-1/image-7-15-lg-2xl.jpg 1x" type="image/jpg">
+            <img src="images/land-1/image-7-15-xs-md.jpg" alt="" class="block w-full h-full">
+          </picture>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-darkBg text-white pt-40">
+      <div class="fade-up container">
+        <h2 class="text-h2 text-center">Примеры наших детских</h2>
+      </div>
+      <div class="fade-up relative mt-8 md:mt-10 xl:mt-12 2xl:mt-16">
+        <div class="container">
+          <div class="-mx-4 md:mx-0 before:h-1/2 before:w-full before:bg-white before:absolute before:left-0 before:top-1/2">
+            <div class="splide relative" data-splide='{"type": "loop", "pagination": false}'>
+              <div class="splide__arrows text-dark">
+                <button class="splide__arrow splide__arrow--prev absolute left-4 top-1/2 -translate-y-1/2 z-10 md:left-6 xl:left-8">
+                  <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm -scale-100 xl:w-15 xl:h-15">
+                    <svg class="w-6 h-6 xl:w-8 xl:h-8" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="#icon-arrow-next"></use>
+                    </svg>
+                  </div>
+                </button>
+                <button class="splide__arrow splide__arrow--next absolute right-4 top-1/2 -translate-y-1/2 z-10 md:right-6 xl:right-8">
+                  <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm xl:w-15 xl:h-15">
+                    <svg class="w-6 h-6 xl:w-8 xl:h-8" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="#icon-arrow-next"></use>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-1-2xl_2x.jpg 2x, images/land-1/slide-1-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-1-lg-xs_2x.jpg 2x, images/land-1/slide-1-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-1-xs-md_2x.jpg 2x, images/land-1/slide-1-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-1-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-2-2xl_2x.jpg 2x, images/land-1/slide-2-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-2-lg-xs_2x.jpg 2x, images/land-1/slide-2-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-2-xs-md_2x.jpg 2x, images/land-1/slide-2-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-2-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-3-2xl_2x.jpg 2x, images/land-1/slide-3-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-3-lg-xs_2x.jpg 2x, images/land-1/slide-3-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-3-xs-md_2x.jpg 2x, images/land-1/slide-3-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-3-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-4-2xl_2x.jpg 2x, images/land-1/slide-4-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-4-lg-xs_2x.jpg 2x, images/land-1/slide-4-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-4-xs-md_2x.jpg 2x, images/land-1/slide-4-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-4-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-5-2xl_2x.jpg 2x, images/land-1/slide-5-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-5-lg-xs_2x.jpg 2x, images/land-1/slide-5-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-5-xs-md_2x.jpg 2x, images/land-1/slide-5-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-5-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-6-2xl_2x.jpg 2x, images/land-1/slide-6-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-6-lg-xs_2x.jpg 2x, images/land-1/slide-6-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-6-xs-md_2x.jpg 2x, images/land-1/slide-6-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-6-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-7-2xl_2x.jpg 2x, images/land-1/slide-7-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-7-lg-xs_2x.jpg 2x, images/land-1/slide-7-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-7-xs-md_2x.jpg 2x, images/land-1/slide-7-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-7-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-8-2xl_2x.jpg 2x, images/land-1/slide-8-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-8-lg-xs_2x.jpg 2x, images/land-1/slide-8-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-8-xs-md_2x.jpg 2x, images/land-1/slide-8-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-8-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-9-2xl_2x.jpg 2x, images/land-1/slide-9-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-9-lg-xs_2x.jpg 2x, images/land-1/slide-9-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-9-xs-md_2x.jpg 2x, images/land-1/slide-9-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-9-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-10-2xl_2x.jpg 2x, images/land-1/slide-10-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-10-lg-xs_2x.jpg 2x, images/land-1/slide-10-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-10-xs-md_2x.jpg 2x, images/land-1/slide-10-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-10-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-11-2xl_2x.jpg 2x, images/land-1/slide-11-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-11-lg-xs_2x.jpg 2x, images/land-1/slide-11-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-11-xs-md_2x.jpg 2x, images/land-1/slide-11-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-11-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-12-2xl_2x.jpg 2x, images/land-1/slide-12-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-12-lg-xs_2x.jpg 2x, images/land-1/slide-12-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-12-xs-md_2x.jpg 2x, images/land-1/slide-12-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-12-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <!--  -->
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-13-2xl_2x.jpg 2x, images/land-1/slide-13-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-13-lg-xs_2x.jpg 2x, images/land-1/slide-13-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-13-xs-md_2x.jpg 2x, images/land-1/slide-13-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-13-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-14-2xl_2x.jpg 2x, images/land-1/slide-14-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-14-lg-xs_2x.jpg 2x, images/land-1/slide-14-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-14-xs-md_2x.jpg 2x, images/land-1/slide-14-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-14-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-15-2xl_2x.jpg 2x, images/land-1/slide-15-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-15-lg-xs_2x.jpg 2x, images/land-1/slide-15-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-15-xs-md_2x.jpg 2x, images/land-1/slide-15-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-15-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-16-2xl_2x.jpg 2x, images/land-1/slide-16-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-16-lg-xs_2x.jpg 2x, images/land-1/slide-16-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-16-xs-md_2x.jpg 2x, images/land-1/slide-16-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-16-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-17-2xl_2x.jpg 2x, images/land-1/slide-17-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-17-lg-xs_2x.jpg 2x, images/land-1/slide-17-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-17-xs-md_2x.jpg 2x, images/land-1/slide-17-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-17-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-18-2xl_2x.jpg 2x, images/land-1/slide-18-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-18-lg-xs_2x.jpg 2x, images/land-1/slide-18-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-18-xs-md_2x.jpg 2x, images/land-1/slide-18-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-18-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-19-2xl_2x.jpg 2x, images/land-1/slide-19-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-19-lg-xs_2x.jpg 2x, images/land-1/slide-19-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-19-xs-md_2x.jpg 2x, images/land-1/slide-19-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-19-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-20-2xl_2x.jpg 2x, images/land-1/slide-20-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-20-lg-xs_2x.jpg 2x, images/land-1/slide-20-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-20-xs-md_2x.jpg 2x, images/land-1/slide-20-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-20-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+
+                  <li class="splide__slide">
+                    <picture class="block ">
+                      <source media="(min-width: 1920px)" srcset="images/land-1/slide-21-2xl_2x.jpg 2x, images/land-1/slide-21-2xl.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 1199px)" srcset="images/land-1/slide-21-lg-xs_2x.jpg 2x, images/land-1/slide-21-lg-xs.jpg 1x" type="image/jpg">
+                      <source media="(min-width: 300px)" srcset="images/land-1/slide-21-xs-md_2x.jpg 2x, images/land-1/slide-21-xs-md.jpg 1x" type="image/jpg">
+                      <img src="images/land-1/slide-21-xs-md.jpg" alt="" class="block w-full h-full">
+                    </picture>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-16 lg:pt-28 xl:pt-40 2xl:pt-52">
+      <div class="container">
+        <h2 class="text-h2 text-center">Стоимость</h2>
+        <div class="mt-14 grid grid-cols-1 gap-16 lg:gap-20">
+
+          <div class="fade-up border-t border-dark border-opacity-10 pt-8 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-12 lg:gap-8 lg:items-start">
+            <div class="md:col-span-1 lg:col-span-3">
+              <h3 class="text-h4">Стандарт LITE</h3>
+              <p class="text text-gray-900 mt-3">14 рабочих дней</p>
+            </div>
+            <div class="mt-8 md:mt-0 md:col-span-1 md:col-start-2 lg:col-span-4 lg:col-start-4 lg:pt-2.5 xl:pr-14 2xl:col-span-3">
+              <ul class="grid grid-cols-1 gap-2.5 text">
+                <li class="mark-item">Обмерный план помещения</li>
+                <li class="mark-item">План расстановки стандартной мебели с&nbsp;размерами</li>
+                <li class="mark-item">Развертки стен с привязкой стандартной&nbsp;мебели</li>
+                <li class="mark-item">3D визуализация</li>
+              </ul>
+              <p class="text text-gray-900 pl-4 pr-12 mt-8 xl:pl-7 xl:mt-10">Размеры, цвета, отделка, фурнитура и&nbsp;материалы в&nbsp;пакете стандарт lite не&nbsp;подлежат изменению. Изменение свойств мебели доступно только в&nbsp;рамках стандартной коллекции.</p>
+            </div>
+            <div class="mt-14 flex items-center justify-between md:col-span-full md:mt-16 md:grid md:grid-cols-2 md:gap-8 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:flex">
+              <div class="">
+                <p class="text-h4">29 900 ₽</p>
+              </div>
+              <div class="">
+                <button class="btn">Заказать проект</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-up border-t border-dark border-opacity-10 pt-8 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-12 lg:gap-8 lg:items-start">
+            <div class="md:col-span-1 lg:col-span-3">
+              <h3 class="text-h4">Классик</h3>
+              <p class="text text-gray-900 mt-3">14 рабочих дней</p>
+            </div>
+            <div class="mt-8 md:mt-0 md:col-span-1 md:col-start-2 lg:col-span-4 lg:col-start-4 lg:pt-2.5 xl:pr-14 2xl:col-span-3">
+              <ul class="grid grid-cols-1 gap-2.5 text">
+                <li class="mark-item">Обмерный план помещения</li>
+                <li class="mark-item">План расстановки мебели с размерами</li>
+                <li class="mark-item">Развертки стен с привязкой мебели</li>
+                <li class="mark-item">3D визуализация</li>
+              </ul>
+            </div>
+            <div class="mt-14 flex items-center justify-between md:col-span-full md:mt-16 md:grid md:grid-cols-2 md:gap-8 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:flex">
+              <div class="">
+                <p class="text-h4">49 900 ₽</p>
+              </div>
+              <div class="">
+                <button class="btn">Заказать проект</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-up border-t border-dark border-opacity-10 pt-8 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-12 lg:gap-8 lg:items-start">
+            <div class="md:col-span-1 lg:col-span-3">
+              <h3 class="text-h4">комфорт</h3>
+              <p class="text text-gray-900 mt-3">21 рабочий день</p>
+            </div>
+            <div class="mt-8 md:mt-0 md:col-span-1 md:col-start-2 lg:col-span-4 lg:col-start-4 lg:pt-2.5 xl:pr-14 2xl:col-span-3">
+              <ul class="grid grid-cols-1 gap-2.5 text">
+                <li class="mark-item">Обмерный план помещения</li>
+                <li class="mark-item">План расстановки мебели с размерами</li>
+                <li class="mark-item">Развертки стен с привязкой мебели</li>
+                <li class="mark-item">3D визуализация</li>
+                <li class="mark-item">План монтажа(демонтажа) перегородок</li>
+                <li class="mark-item">План монтажа розеток</li>
+                <li class="mark-item">План монтажа осветительных приборов</li>
+                <li class="mark-item">Схема подключения осветительных приборов</li>
+                <li class="mark-item">План потолка</li>
+                <li class="mark-item">Развертки стен с привязкой электрики</li>
+                <li class="mark-item">Комплектация проекта декором и дополнительными предметами интерьера</li>
+              </ul>
+            </div>
+            <div class="mt-14 flex items-center justify-between md:col-span-full md:mt-16 md:grid md:grid-cols-2 md:gap-8 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:flex">
+              <div class="">
+                <p class="text-h4">63 900 ₽</p>
+              </div>
+              <div class="">
+                <button class="btn">Заказать проект</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-up border-t border-dark border-opacity-10 pt-8 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-12 lg:gap-8 lg:items-start">
+            <div class="md:col-span-1 lg:col-span-3">
+              <h3 class="text-h4">Премиум</h3>
+              <p class="text text-gray-900 mt-3">28 рабочих день</p>
+            </div>
+            <div class="mt-8 md:mt-0 md:col-span-1 md:col-start-2 lg:col-span-4 lg:col-start-4 lg:pt-2.5 xl:pr-14 2xl:col-span-3">
+              <ul class="grid grid-cols-1 gap-2.5 text">
+                <li class="mark-item">2 варианта 3D визуализации</li>
+                <li class="mark-item">Персональный менеджер</li>
+                <li class="mark-item">Обмерный план помещения</li>
+                <li class="mark-item">План расстановки мебели с размерами</li>
+                <li class="mark-item">Развертки стен с привязкой мебели</li>
+                <li class="mark-item">План монтажа(демонтажа) перегородок</li>
+                <li class="mark-item">План монтажа розеток</li>
+                <li class="mark-item">План монтажа осветительных приборов</li>
+                <li class="mark-item">Схема подключения осветительных приборов</li>
+                <li class="mark-item">План потолка</li>
+                <li class="mark-item">Развертки стен с привязкой электрики</li>
+                <li class="mark-item">Комплектация проекта декором и дополнительными предметами интерьера</li>
+              </ul>
+            </div>
+            <div class="mt-14 flex items-center justify-between md:col-span-full md:mt-16 md:grid md:grid-cols-2 md:gap-8 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:flex">
+              <div class="">
+                <p class="text-h4">74 900 ₽</p>
+              </div>
+              <div class="">
+                <button class="btn">Заказать проект</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-28 lg:pt-[180px] xl:pt-[220px]">
+      <div class="container">
+        <h2 class="fade-up text-h2 text-center">Почему мы лучшие</h2>
+        <div class="js-open-popup fade-up cursor-pointer relative -mx-4 mt-8 md:mx-0 lg:mt-15" data-video-url="https://www.youtube-nocookie.com/embed/DGVMnTcfcCc?autoplay=1&autohide=1&fs=1&rel=0&hd=1&wmode=transparent&enablejsapi=1&html5=1">
+          <picture class="block">
+            <source media="(min-width: 1920px)" srcset="images/land-1/image-6-2xl_2x.jpg 2x, images/land-1/image-6-2xl.jpg" type="image/jpg">
+
+            <source media="(min-width: 1199px)" srcset="images/land-1/image-6-lg-xl_2x.jpg 2x, images/land-1/image-6-lg-xl.jpg" type="image/jpg">
+
+            <source media="(min-width: 768px)" srcset="images/land-1/image-6-md_2x.jpg 2x, images/land-1/image-6-md.jpg" type="image/jpg">
+
+            <source media="(min-width: 300px)" srcset="images/land-1/image-6-xs_2x.jpg 2x, images/land-1/image-6-xs.jpg" type="image/jpg">
+            <img src="images/land-1/image-6-xs.jpg" alt="" class="block w-full">
+          </picture>
+          <div class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-orange-500 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:w-20 md:h-20 xl:w-36 xl:h-36">
+            <svg class="w-4 h-4 translate-x-[6%] md:w-6 md:h-8 xl:w-12 xl:h-12" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-play"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="bg-white pt-24 pb-28 xl:py-[200px]">
+    <div class="container">
+      <h2 class="fade-up text-h2 text-center">Отзывы знаменитостей</h2>
+      <div class="grid grid-cols-1 gap-5 mt-8 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:mt-9 lg:gap-x-8 lg:gap-y-10 lg:mt-10 xl:mt-15 2xl:gap-y-15 2xl:mt-20">
+        <div class="js-open-popup fade-up relative cursor-pointer" data-video-url="https://www.youtube-nocookie.com/embed/FgLhf1NXp_A?autoplay=1&autohide=1&fs=1&rel=0&hd=1&wmode=transparent&enablejsapi=1&html5=1">
+          <picture class="block">
+            <source media="(min-width: 1440px)" srcset="images/reviews/review-1-xl-2xl_2x.jpg 2x, images/reviews/review-1-xl-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/reviews/review-1-xs-lg_2x.jpg 2x, images/reviews/review-1-xs-lg.jpg 1x" type="image/jpg">
+            <img class="block w-full" src="images/reviews/review-1-xs-lg.jpg" alt="">
+          </picture>
+          <div class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-orange-500 absolute left-3 top-3 lg:left-5 lg:top-5 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 2xl:left-7 2xl:top-7">
+            <svg class="w-4 h-4 translate-x-[6%] xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-play"></use>
+            </svg>
+          </div>
+          <p class="text mt-2.5">Анна Хилькевич, актриса кино и тв</p>
+        </div>
+
+        <div class="js-open-popup fade-up relative cursor-pointer" data-video-url="https://www.youtube-nocookie.com/embed/lW2UguTvTT4?autoplay=1&autohide=1&fs=1&rel=0&hd=1&wmode=transparent&enablejsapi=1&html5=1">
+          <picture class="block">
+            <source media="(min-width: 1440px)" srcset="images/reviews/review-2-xl-2xl_2x.jpg 2x, images/reviews/review-2-xl-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/reviews/review-2-xs-lg_2x.jpg 2x, images/reviews/review-2-xs-lg.jpg 1x" type="image/jpg">
+            <img class="block w-full" src="images/reviews/review-2-xs-lg.jpg" alt="">
+          </picture>
+          <div class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-orange-500 absolute left-3 top-3 lg:left-5 lg:top-5 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 2xl:left-7 2xl:top-7">
+            <svg class="w-4 h-4 translate-x-[6%] xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-play"></use>
+            </svg>
+          </div>
+          <p class="text mt-2.5">Анна Банщикова, актриса театра и кино</p>
+        </div>
+
+        <div class="js-open-popup fade-up relative cursor-pointer" data-video-url="https://www.youtube-nocookie.com/embed/BMI2GMTzetw?autoplay=1&autohide=1&fs=1&rel=0&hd=1&wmode=transparent&enablejsapi=1&html5=1">
+          <picture class="block">
+            <source media="(min-width: 1440px)" srcset="images/reviews/review-3-xl-2xl_2x.jpg 2x, images/reviews/review-3-xl-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/reviews/review-3-xs-lg_2x.jpg 2x, images/reviews/review-3-xs-lg.jpg 1x" type="image/jpg">
+            <img class="block w-full" src="images/reviews/review-3-xs-lg.jpg" alt="">
+          </picture>
+          <div class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-orange-500 absolute left-3 top-3 lg:left-5 lg:top-5 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 2xl:left-7 2xl:top-7">
+            <svg class="w-4 h-4 translate-x-[6%] xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-play"></use>
+            </svg>
+          </div>
+          <p class="text mt-2.5">Дмитрий Кожома, шоумен, ведущий, актер</p>
+        </div>
+
+        <div class="js-open-popup fade-up relative cursor-pointer" data-video-url="https://www.youtube-nocookie.com/embed/s8l6X94DBNA?autoplay=1&autohide=1&fs=1&rel=0&hd=1&wmode=transparent&enablejsapi=1&html5=1">
+          <picture class="block">
+            <source media="(min-width: 1440px)" srcset="images/reviews/review-4-xl-2xl_2x.jpg 2x, images/reviews/review-4-xl-2xl.jpg 1x" type="image/jpg">
+            <source media="(min-width: 300px)" srcset="images/reviews/review-4-xs-lg_2x.jpg 2x, images/reviews/review-4-xs-lg.jpg 1x" type="image/jpg">
+            <img class="block w-full" src="images/reviews/review-4-xs-lg.jpg" alt="">
+          </picture>
+          <div class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-orange-500 absolute left-3 top-3 lg:left-5 lg:top-5 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 2xl:left-7 2xl:top-7">
+            <svg class="w-4 h-4 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-play"></use>
+            </svg>
+          </div>
+          <p class="text mt-2.5">Андрей Мерзликин, актер театра и кино</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-sand pt-20 pb-12">
+    <section class="container">
+      <div class="md:flex md:flex-wrap md:justify-center">
+        <a href="#" class="btn-display">
+          Дизайн детской
+          <picture class="overflow-hidden w-15 h-10 rounded-full ml-2.5 md:ml-5 lg:w-24 lg:h-16">
+            <source srcset="images/footer/footer-1_2x.jpg 2x, images/footer/footer-1.jpg 1x" type="image/jpg">
+            <img src="images/footer/footer-1.jpg" alt="Дизайн детской" class="block w-full h-full">
+          </picture>
+        </a>
+        <a href="#" class="btn-display">
+          Шоурум
+          <picture class="overflow-hidden w-15 h-10 rounded-full ml-2.5 md:ml-5 lg:w-24 lg:h-16">
+            <source srcset="images/footer/footer-2_2x.jpg 2x, images/footer/footer-2.jpg 1x" type="image/jpg">
+            <img src="images/footer/footer-2.jpg" alt="Шоурум" class="block w-full h-full">
+          </picture>
+        </a>
+        <a href="#" class="btn-display group">
+          Инстаграм
+          <div class="flex items-center ml-2.5 md:ml-5 xl:-mr-1">
+
+            <picture class="overflow-hidden w-10 h-10 rounded-full xl:w-15 xl:h-15">
+              <source srcset="images/footer/footer-3_2x.jpg 2x, images/footer/footer-3.jpg 1x" type="image/jpg">
+              <img src="images/footer/footer-3.jpg" alt="Инстаграм" class="block w-full h-full">
+            </picture>
+
+            <picture class="overflow-hidden box-content w-10 h-10 rounded-full border-2 border-sand -ml-2.5 xl:w-15 xl:h-15 xl:-ml-4 xl:border-4 group-hover:border-dark transition-all duration-300 hover:duration-500">
+              <source srcset="images/footer/footer-4_2x.jpg 2x, images/footer/footer-4.jpg 1x" type="image/jpg">
+              <img src="images/footer/footer-4.jpg" alt="Инстаграм" class="block w-full h-full">
+            </picture>
+
+            <picture class="overflow-hidden box-content w-10 h-10 rounded-full border-2 border-sand -ml-2.5 xl:w-15 xl:h-15 xl:-ml-4 xl:border-4 group-hover:border-dark transition-all duration-300 hover:duration-500">
+              <source srcset="images/footer/footer-5_2x.jpg 2x, images/footer/footer-3.jpg 1x" type="image/jpg">
+              <img src="images/footer/footer-5.jpg" alt="Инстаграм" class="block w-full h-full">
+            </picture>
+          </div>
+        </a>
+      </div>
+
+      <div class="fade-up mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:mt-24">
+        <div>
+          <p>
+            <a href="/" class="inline-flex">
+              <svg class="w-36 h-8" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+          </p>
+          <p class="mt-8">
+            <a href="tel:+7 499 40-40-200" class="text">+7 499 40-40-200</a>
+          </p>
+          <p>
+            <a href="mail:sales@mamka.moscow" class="text">sales@mamka.moscow</a>
+          </p>
+          <p class="mt-8 text w-3/4 md:w-1/2">Москва, пр-т&nbsp;Мира&nbsp;102 стр.&nbsp;38 м.&nbsp;Алексеевская, ЖК «Парк Мира» C&nbsp;11:00&nbsp;до&nbsp;20:00, без&nbsp;выходных</p>
+          <p class="mt-8">
+            <a href="https://yandex.ru/maps/org/mamka_fabrika_detskoy_mebeli/163023551808/?ll=37.639306%2C55.800268&z=16" target="_blank" rel="noopener noreferrer" class="hover-underline">
+              <span class="text inline-flex items-center">
+                Смотреть на карте
+                <svg class="w-5 h-5 ml-2.5" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#icon-arrow-link"></use>
+                </svg>
+              </span>
+            </a>
+          </p>
+        </div>
+
+        <nav class="mt-15 grid grid-cols-2 gap-4 lg:grid lg:grid-cols-3 lg:gap-8 lg:mt-0">
+          <ul class="col-span-1 lg:col-span-1">
+            <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Дизайн детской</span></a></li>
+            <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Мебель на заказ</span></a></li>
+            <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Каталог</span></a></li>
+            <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Проекты</span></a></li>
+            <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Дизайнерам</span></a></li>
+            <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Журнал</span></a></li>
+          </ul>
+
+          <div class="col-span-1 lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-8">
+            <ul>
+              <li class="mt-5"><a href="#" class="text-label hover-underline"><span>О компании</span></a></li>
+              <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Контакты</span></a></li>
+            </ul>
+            <ul class="col-start-2">
+              <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Публичная оферта</span></a></li>
+              <li class="mt-5"><a href="#" class="text-label hover-underline"><span>Политика конфиденциальности</span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="mt-20 -mx-2 md:mx-0 md:mt-56 md:flex md:flex-row-reverse md:justify-between md:items-center 2xl:mt-64">
+        <div class="flex flex-wrap justify-center text-white">
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-vk"></use>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-fb"></use>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-ok"></use>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-tw"></use>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-yb"></use>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-ig"></use>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full m-1 bg-dark" target="_blank" rel="noopener noreferrer">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-pr"></use>
+            </svg>
+          </a>
+        </div>
+        <p class="text-label text-center mt-7 md:mt-0">©2022, Mamka — фабрика детской мебели</p>
+      </div>
+    </section>
+  </footer>
+
+  <div class="js-popup fixed left-0 right-0 top-0 h-screen z-100 py-8 flex hidden items-center">
+    <div class="js-popup-bg cursor-pointer absolute left-0 top-0 w-full h-full bg-black bg-opacity-60"></div>
+    <div class="js-popup-content-wrap container relative flex-initial w-full cursor-pointer">
+      <div class="js-popup-content">
+      </div>
+    </div>
+  </div>
+  <script src="js/splide.min.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>

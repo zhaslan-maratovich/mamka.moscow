@@ -1,0 +1,21 @@
+{
+  "name": "mamka.moscow",
+  "version": "1.0.0",
+  "description": "An [Express.js](https://expressjs.com) application boilerplate using [Pug](https://pugjs.org) as the template engine and using [Tailwind](https://tailwindcss.com) for styles.",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/css/app.css -o ./assets/styles.css -w -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajasegar/express-pug-tailwind-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajasegar/express-pug-tailwind-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rajasegar/express-pug-tailwind-boilerplate#readme"
+}
