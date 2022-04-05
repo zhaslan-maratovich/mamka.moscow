@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var btnBurgerElement = document.querySelector('.js-header-burger');
   var bodyElement = document.querySelector('body');
+  var headerElement = document.querySelector('.header');
 
   bodyElement.classList.add('page--ready');
 
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnBurgerElement.classList.contains(classNameClose)) {
       btnBurgerElement.classList.remove(classNameClose);
       bodyElement.classList.remove(classNameMenuOpen);
+      headerElement.classList.add('header--bg');
     } else {
       btnBurgerElement.classList.add(classNameClose);
       bodyElement.classList.add(classNameMenuOpen);
