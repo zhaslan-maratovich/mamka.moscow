@@ -74,12 +74,17 @@
   }
 
   .btn-light {
-    @apply text-button text-white text-center h-11 inline-flex items-center justify-center px-6 py-2 border border-white border-opacity-20 rounded-full hover:bg-orange-500 transition-colors;
+    @apply text-button text-white text-center h-11 inline-flex items-center justify-center px-6 py-2 border border-gray-300 rounded-full hover:bg-orange-500 hover:border-orange-500 transition-colors;
+  }
+
+  .btn-light-2 {
+    @apply inline-block text-button text-dark text-center px-6 py-4 border border-gray-300 rounded-full hover:bg-dark hover:text-white hover:border-dark transition-colors xl:py-5 xl:px-8;
   }
 
   .btn-display {
     @apply flex items-center justify-center text-h4 py-2.5 px-2 my-2.5 rounded-full border border-gray-500 md:inline-flex md:pl-8 md:pr-2.5 md:mx-1 md:my-1.5 lg:m-2.5 hover:bg-dark hover:text-white transition-colors duration-300 hover:duration-500;
   }
+
 
   .mark-item {
     @apply relative pl-4 before:w-1.5 before:h-1.5 before:rounded-full before:bg-orange-500 before:absolute before:left-0.5 before:top-2.5 xl:pl-7 xl:before:left-0;
@@ -147,15 +152,24 @@
     bottom: -6px;
   }
 
-  .header::before {
-    content: '';
-    @apply absolute left-0 top-0 w-full h-full bg-darkBg -z-10;
+  .header {
+    @apply fixed left-0 top-0 w-full h-15 z-50 xl:h-20 text-white ease-in-out transition-colors duration-300;
+    mix-blend-mode: difference;
+  }
+
+  .header-cover {
+    @apply fixed left-0 top-0 w-full h-15 xl:h-20 bg-darkBg z-20;
     transform: translateY(-100%);
     transition: transform 1s cubic-bezier(.33,0,.13,1),opacity .66s cubic-bezier(.33,0,.67,1);
   }
 
-  .header--bg::before {
+  .header--bg + .header-cover,
+  .page--menu-open .header-cover {
     transform: none;
+  }
+
+  .page--menu-open .header-cover {
+    @apply delay-300
   }
 
   .page--ready .line {
@@ -311,4 +325,76 @@
     @apply opacity-0;
   }
 
+  .tabs-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #383838 #E5E5E5;
+  }
+
+  /* для Chrome/Edge/Safari */
+  .tabs-scroll::-webkit-scrollbar {
+    height: 1px;
+  }
+  .tabs-scroll::-webkit-scrollbar-track {
+    background: #E5E5E5;
+  }
+  .tabs-scroll::-webkit-scrollbar-thumb {
+    background-color: #383838;
+    border-radius: 5px;
+  }
+
+  .tab {
+    @apply flex-none text-button text-dark border border-gray-300 rounded-full px-6 py-4 mr-2.5 xl:py-5 xl:px-8 transition-colors hover:bg-dark hover:text-white hover:border-dark;
+  }
+
+  .tab--active {
+    @apply bg-dark text-white border-dark;
+  }
+
+  .tab-select {
+    @apply cursor-pointer text-button text-dark border border-gray-300 rounded-full px-6 py-4 mt-10 lg:m-0 xl:py-5 xl:px-8;
+  }
+
+  .tab-select select {
+    @apply block bg-transparent w-full text-button outline-none;
+  }
+
+  .post-card {
+    @apply block;
+  }
+
+  .post-card img {
+    @apply block w-full aspect-[8/5] object-cover;
+  }
+
+  .page-link {
+    @apply inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 text-button text-dark md:w-10 md:h-10 transition-colors hover:bg-dark hover:text-white hover:border-dark;
+  }
+
+  .page-link--active {
+    @apply bg-dark text-white border-dark;
+  }
+
+  .breadcrumbs {
+    @apply flex justify-center;
+  }
+
+  .breadcrumbs li:nth-child(n+2) {
+    @apply hidden lg:block;
+  }
+
+  .breadcrumbs li:first-child {
+    @apply text-gray-800;
+  }
+
+  .breadcrumbs li:first-child svg {
+    @apply hidden;
+  }
+
+  .breadcrumbs a {
+    @apply inline-flex flex-row-reverse items-center text-label;
+  }
+
+  .breadcrumbs svg {
+    @apply text-gray-800 w-2.5 h-2.5 mx-1 scale-[-1] lg:transform-none;
+  }
 }
