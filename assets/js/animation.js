@@ -40,10 +40,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnBurgerElement.classList.contains(classNameClose)) {
       btnBurgerElement.classList.remove(classNameClose);
       bodyElement.classList.remove(classNameMenuOpen);
-      headerElement.classList.add('header--bg');
+      // headerElement.classList.add('header--bg');
     } else {
       btnBurgerElement.classList.add(classNameClose);
       bodyElement.classList.add(classNameMenuOpen);
     }
   });
+
+  function handleScroll (e) {
+    if (e.target.classList.contains("on-scrollbar") === false) {
+        e.target.classList.add("on-scrollbar");
+    }
+  }
+
+  document.querySelector('.tabs-scroll').addEventListener('scroll', handleScroll, true);
+
 });

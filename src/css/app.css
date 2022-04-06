@@ -334,7 +334,7 @@
     @apply opacity-0;
   }
 
-  .tabs-scroll {
+  .tabs-scroll.on-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #383838 #E5E5E5;
   }
@@ -344,15 +344,23 @@
     height: 1px;
   }
   .tabs-scroll::-webkit-scrollbar-track {
-    background: #E5E5E5;
+    background: transparent;
   }
   .tabs-scroll::-webkit-scrollbar-thumb {
-    background-color: #383838;
+    background-color: transparent;
     border-radius: 5px;
   }
 
+  /* для Chrome/Edge/Safari */
+  .tabs-scroll.on-scrollbar::-webkit-scrollbar-track {
+    background: #E5E5E5;
+  }
+  .tabs-scroll.on-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #383838;
+  }
+
   .tab {
-    @apply flex-none text-button text-dark border border-gray-300 rounded-full px-6 py-4 mr-2.5 xl:py-5 xl:px-8 transition-colors hover:bg-dark hover:text-white hover:border-dark;
+    @apply flex-none inline-block text-button text-dark border border-gray-300 rounded-full px-6 py-4 mr-2.5 xl:py-5 xl:px-8 transition-colors hover:bg-dark hover:text-white hover:border-dark;
   }
 
   .tab--active {
@@ -387,16 +395,17 @@
     @apply flex justify-center;
   }
 
-  .breadcrumbs li:nth-child(n+2) {
+  .breadcrumbs li:nth-last-child(n+3),
+  .breadcrumbs li:nth-last-child(1) {
     @apply hidden lg:block;
   }
 
-  .breadcrumbs li:first-child {
-    @apply text-gray-800;
+  .breadcrumbs li:nth-last-child(n+2) {
+    @apply lg:text-gray-800;
   }
 
   .breadcrumbs li:first-child svg {
-    @apply hidden;
+    @apply lg:hidden;
   }
 
   .breadcrumbs a {
@@ -405,5 +414,71 @@
 
   .breadcrumbs svg {
     @apply text-gray-800 w-2.5 h-2.5 mx-1 scale-[-1] lg:transform-none;
+  }
+
+  .projects-more .post-card:nth-child(n+5) {
+    @apply hidden xl:block;
+  }
+
+  .poster img {
+    @apply w-full;
+  }
+
+  .post-content figure,
+  .post-content p,
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4,
+  .post-content .figure-col {
+    @apply my-10 md:my-15;
+  }
+
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4 {
+    @apply text-h4;
+  }
+
+  .post-content p,
+  .post-content li {
+    @apply text md:text-[18px];
+  }
+
+  .post-content ul {
+    @apply pl-10 space-y-5 list-disc marker:text-orange-500 marker:-ml-1;
+  }
+
+  .post-content ol {
+    @apply pl-10 space-y-5 list-decimal  marker:-ml-1;
+  }
+
+  .post-content li {
+    @apply pl-3;
+  }
+
+  .post-content img {
+    @apply w-full;
+  }
+
+  .post-content figure {
+    @apply -mx-4 md:mx-0;
+  }
+
+  .post-content figcaption {
+    @apply text-label text-center text-gray-900 mt-5;
+  }
+
+  .post-content .figure-col {
+    @apply md:grid md:grid-cols-2 md:gap-x-6 lg:gap-x-8;
+  }
+
+  .post-content .figure-col figure {
+    @apply my-0 md:my-0 lg:my-0;
+  }
+
+  .top-project-bg {
+    @apply relative before:absolute before:left-1/2 before:bottom-1/2 before:w-screen before:h-[1000px] before:-translate-x-1/2 before:bg-orange-50 before:-z-[1];
   }
 }
