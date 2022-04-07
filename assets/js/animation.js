@@ -53,6 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  document.querySelector('.tabs-scroll').addEventListener('scroll', handleScroll, true);
+  var tabsScrollElement = document.querySelector('.tabs-scroll');
+
+  if (tabsScrollElement) {
+    tabsScrollElement.addEventListener('scroll', handleScroll, true);
+  }
 
 });
