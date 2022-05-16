@@ -542,4 +542,16 @@
   .material-popup--show .material-popup__content {
     @apply translate-x-0 ease-in-out duration-500;
   }
+
+  .material-radio {
+    @apply cursor-pointer w-10 h-10 rounded-full relative before:absolute before:-left-1.5 before:-top-1.5 before:-right-1.5 before:-bottom-1.5 before:rounded-full before:border-2 before:border-transparent hover:before:border-gray-300 before:transition-colors before:duration-300;
+  }
+
+  .material-radio--active {
+    @apply before:border-dark;
+  }
+
+  .material-radio__img {
+    @apply block w-full h-full rounded-full;
+  }
 }
