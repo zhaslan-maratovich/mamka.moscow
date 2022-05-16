@@ -10,10 +10,18 @@ document.addEventListener('DOMContentLoaded', function () {
   for (let element of elements) {
     element.addEventListener('click', function () {
       var videoUrl = element.getAttribute('data-video-url');
-      var iframe = '<iframe class="w-full h-[300px] md:h-[420px] lg:h-[600px] 2xl:h-[920px]" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" src="' + videoUrl + '" scrolling="no"></iframe>';
+      var imageUrl = element.getAttribute('data-image-url');
+      if (videoUrl) {
+        var iframe = '<iframe class="w-full h-[300px] md:h-[420px] lg:h-[600px] 2xl:h-[920px]" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" src="' + videoUrl + '" scrolling="no"></iframe>';
 
-      document.querySelector('.js-popup-content').innerHTML = iframe;
-      document.querySelector('.js-popup').classList.remove('hidden');
+        document.querySelector('.js-popup-content').innerHTML = iframe;
+        document.querySelector('.js-popup').classList.remove('hidden');
+      } else if (imageUrl) {
+        var iframe = '<img class="block w-auto h-[90vh] mx-auto" src="'+ imageUrl +'">';
+
+        document.querySelector('.js-popup-content').innerHTML = iframe;
+        document.querySelector('.js-popup').classList.remove('hidden');
+      }
     });
   }
 

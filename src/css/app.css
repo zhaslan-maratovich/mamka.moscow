@@ -189,6 +189,10 @@
     @apply text-white;
   }
 
+  .header--bg .header__inner {
+    @apply border-transparent transition-all duration-700;
+  }
+
   .page--ready .line {
     --delay: 0.35s;
     display: block;
