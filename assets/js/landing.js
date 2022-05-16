@@ -97,4 +97,24 @@ document.addEventListener('DOMContentLoaded', function () {
   for ( var i = 0; i < icloses.length; i++ ) {
     icloses[ i ].addEventListener('click', closePopupMaterial);
   }
+
+  // Показать больше на странице автора
+  var authorInfoEl = document.querySelector('.js-author-info');
+  var fullText = '';
+  if (authorInfoEl) {
+    if (authorInfoEl.innerHTML.length > 320) {
+      fullText = authorInfoEl.innerHTML;
+      authorInfoEl.innerHTML = fullText.substring(0, 320) + '...'
+    } else {
+      document.querySelector('.js-author-show-more-wrap').classList.add('hidden');
+    }
+
+    var authorMoreEl = document.querySelector('.js-author-show-more');
+    if (authorMoreEl) {
+      authorMoreEl.addEventListener('click', function () {
+        authorInfoEl.innerHTML = fullText;
+        document.querySelector('.js-author-show-more-wrap').classList.add('hidden');
+      })
+    }
+  }
 });
