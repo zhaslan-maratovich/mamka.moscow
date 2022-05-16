@@ -190,7 +190,7 @@
   }
 
   .header--bg .header__inner {
-    @apply border-transparent transition-all duration-700;
+    @apply border-transparent;
   }
 
   .page--ready .line {
